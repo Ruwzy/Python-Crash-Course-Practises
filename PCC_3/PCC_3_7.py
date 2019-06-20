@@ -1,0 +1,45 @@
+inv_people = ["Beauvoir", "ZeDong Mao", "Enlai Zhou", "Frank"]
+print("Hi, " + inv_people[0] + ", please come to dinner.")
+print("Hi, " + inv_people[1] + ", please come to dinner.")
+print("Hi, " + inv_people[2] + ", please come to dinner.")
+print("Hi, " + inv_people[3] + ", please come to dinner.")
+print(inv_people[3] + " cannot come to our dinner.")
+
+del inv_people[3]
+inv_people.insert(3, "Ruby")
+print("Hi, " + inv_people[0] + ", please come to dinner.")
+print("Hi, " + inv_people[1] + ", please come to dinner.")
+print("Hi, " + inv_people[2] + ", please come to dinner.")
+print("Hi, " + inv_people[3] + ", please come to dinner.")
+
+print("Now we have bigger room for more people to take the dinner!")
+inv_people.insert(0, "Jackie")
+inv_people.insert(2, "Zetian Wu")
+inv_people.append("Mum")
+print(inv_people)
+print("Hi, " + inv_people[0] + ", please come to dinner.")
+print("Hi, " + inv_people[1] + ", please come to dinner.")
+print("Hi, " + inv_people[2] + ", please come to dinner.")
+print("Hi, " + inv_people[3] + ", please come to dinner.")
+print("Hi, " + inv_people[4] + ", please come to dinner.")
+print("Hi, " + inv_people[5] + ", please come to dinner.")
+print("Hi, " + inv_people[6] + ", please come to dinner.")
+
+print("We would only invite two people now due to the not-arrived table.")
+print(inv_people)
+sry_one = inv_people.pop(0)
+print(sry_one + ", sorry we cannot share the dinner.")
+sry_two = inv_people.pop(0)
+print(sry_two + ", sorry we cannot share the dinner.")
+sry_three = inv_people.pop(2)
+print(sry_three + ", sorry we cannot share the dinner.")
+sry_four = inv_people.pop(2)
+print(sry_four + ", sorry we cannot share the dinner.")
+sry_five = inv_people.pop(2)
+print(sry_five + ", sorry we cannot share the dinner.")
+print(inv_people[0], ", you are still invited.")
+print(inv_people[1], ", you are still invited.")
+
+del inv_people[0]
+del inv_people[0]
+print(inv_people)
