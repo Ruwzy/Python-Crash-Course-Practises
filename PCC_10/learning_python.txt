@@ -1,0 +1,3 @@
+In Python you can input whatever you want, and show them on screen.
+In Python you can do the data analysis.
+In Python you can make your own games.
