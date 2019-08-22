@@ -21,7 +21,6 @@ def run_game():
     while True:
         gf.check_events(ship)
         ship.update()
-        gf.check_events()
         gf.update_screen(ai_settings, screen, ship)
 
         # let the latest screen can be seen
