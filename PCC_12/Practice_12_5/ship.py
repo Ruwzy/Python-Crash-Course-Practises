@@ -1,39 +1,43 @@
 import pygame
 
+
 class Ship():
 
     def __init__(self, ai_settings, screen):
-        """ initialize the ship and set its original position"""
+        """ initialize the ship's setting and its original place"""
         self.screen = screen
         self.ai_settings = ai_settings
 
-        # load the ship's image and get its rect
+        # load the ship's image and the outside rect
         self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
-        # set every new ship to the center of left
-        self.rect.center = self.screen_rect.midleft
-        self.rect.left = self.screen_rect.left
+        #set every new ship at the screen's center bottom
+        self.rect.centerx = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.bottom
 
-        #store float type value in setting center
-        self.center = float(self.rect.centery)
+        # make the ship's setting can sotre float
+        self.center = float(self.rect.centerx)
+    
 
-        # moving signal
-        self.moving_up = False
-        self.moving_down = False
+        #moving signal
+        self.moving_right = False
+        self.moving_left = False
 
     def update(self):
-        """based on the moving signal to change the ship's position"""
-        #update the ship's center value, not the rect
-        if self.moving_up and self.rect.top < self.screen_rect.top:
-            self.rect.centery += self.ai_settings.ship_speed_fator
-        if self.moving_down and self.rect.bottom > 0:
-            self.rect.centery -= self.ai_settings.ship_speed_factor
+        """adjust the ship's position based on the moving signal"""
+        # upade the center value not the rect value
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.center += self.ai_settings.ship_speed_factor
+        if self.moving_left and self.rect.left > 0:
+            self.center -= self.ai_settings.ship_speed_factor
 
-        # update the rect based on the self.center
-        self.rect.centery = self.center 
+        # update rect object from self.center
+        self.rect.centerx = self.center
+
+
 
     def blitme(self):
-        """ draw the ship at a certain position"""
+        """draw a ship at a pointed place"""
         self.screen.blit(self.image, self.rect)
